@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 class="my-5">List of entries:</h1>
+
+        <div class="row row-cols3 g-2">
+            {% for note in notes %} 
+            <div class="col">
+                <div class="p-3 border">
+                    <a href="{% url 'notes.detail' pk=note.id %}" class="text-dark text-decoration-non"><h3>{{note.title}}</h3></a>
+                    {{note.text|truncatechars:10}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+ {% endblock %}
+   <!--  For each note received in the temlate, DTL (Django Template Language) should create a list item.
+    Things that should be rendered by the template appear within double curly brackets 
+
+        <li class="note-li">
+        {{note.title}}
+        </li>
+</ul>
+-->
