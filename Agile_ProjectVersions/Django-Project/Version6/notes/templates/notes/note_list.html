@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="my-5">List of entries:</h1>
+
+        <div style="display: flex; flex-direction: row; flex-wrap: wrap">
+            {% for note in notes %}
+            {#  Single Card Template:#}
+            <div class="card" style="width: 18rem; margin: 10px">
+              <img class="card-img-top" src="static/images/card_image.jpg" alt="Card image cap" >
+              <div class="card-body">
+                <h5 class="card-title">{{note.title}}</h5>
+                <p class="card-text">{{note.text|truncatechars:10}}</p>
+                <a href="{% url 'notes.detail' pk=note.id %}" class="btn btn-warning">Update Post</a>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>    
+ {% endblock %}
+   <!--  For each note received in the temlate, DTL (Django Template Language) should create a list item.
+    Things that should be rendered by the template appear within double curly brackets 
+
+        <li class="note-li">
+        {{note.title}}
+        </li>
+</ul>
+-->

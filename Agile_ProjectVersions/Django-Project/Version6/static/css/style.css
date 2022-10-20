@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap');
+@font-face {
+    font-family: 'Send Flowers';
+    src: url('../fonts/SendFlowers-Regular.ttf');
+  }
+ul.errorlist { display:none }
+h1 {
+    font-family: 'Send Flowers', cursive;
+    margin: 60;
+}
